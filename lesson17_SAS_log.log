@@ -1,0 +1,499 @@
+NOTE: Copyright (c) 2002-2012 by SAS Institute Inc., Cary, NC, USA.
+NOTE: SAS (r) Proprietary Software 9.4 (TS1M1)
+      Licensed to EMORY UNIVERSITY - T&R, Site 70085360.
+NOTE: This session is executing on the X64_8PRO  platform.
+
+
+
+NOTE: Updated analytical products:
+
+      SAS/STAT 13.1
+      SAS/ETS 13.1
+      SAS/OR 13.1
+      SAS/IML 13.1
+      SAS/QC 13.1
+
+NOTE: Additional host information:
+
+ X64_8PRO WIN 6.2.9200  Workstation
+
+NOTE: SAS initialization used:
+      real time           1.19 seconds
+      cpu time            1.03 seconds
+
+1
+2
+3    libname library 'C:\MyGithub\N736Fall2017_HELPdataset\' ;
+NOTE: Libref LIBRARY was successfully assigned as follows:
+      Engine:        V9
+      Physical Name: C:\MyGithub\N736Fall2017_HELPdataset
+4
+5    proc format library = library ;
+6       value TREAT
+7          0 = 'usual care'
+8          1 = 'HELP clinic' ;
+NOTE: Format TREAT is already on the library LIBRARY.FORMATS.
+NOTE: Format TREAT has been written to LIBRARY.FORMATS.
+9       value FEMALE
+10         0 = 'Male'
+11         1 = 'Female' ;
+NOTE: Format FEMALE is already on the library LIBRARY.FORMATS.
+NOTE: Format FEMALE has been written to LIBRARY.FORMATS.
+12      value HOMELESS
+13         0 = 'no'
+14         1 = 'yes' ;
+NOTE: Format HOMELESS is already on the library LIBRARY.FORMATS.
+NOTE: Format HOMELESS has been written to LIBRARY.FORMATS.
+15      value G1B
+16         0 = 'no'
+17         1 = 'yes' ;
+NOTE: Format G1B is already on the library LIBRARY.FORMATS.
+NOTE: Format G1B has been written to LIBRARY.FORMATS.
+18      value F1A
+19         0 = 'Not at all or less than 1 day'
+20         1 = '1-2 days'
+21         2 = '3-4 days'
+22         3 = '5-7 days or nearly every day for 2 weeks' ;
+NOTE: Format F1A is already on the library LIBRARY.FORMATS.
+NOTE: Format F1A has been written to LIBRARY.FORMATS.
+23      value F1B
+24         0 = 'Not at all or less than 1 day'
+25         1 = '1-2 days'
+26         2 = '3-4 days'
+27         3 = '5-7 days or nearly every day for 2 weeks' ;
+NOTE: Format F1B is already on the library LIBRARY.FORMATS.
+NOTE: Format F1B has been written to LIBRARY.FORMATS.
+28      value F1C
+29         0 = 'Not at all or less than 1 day'
+30         1 = '1-2 days'
+31         2 = '3-4 days'
+32         3 = '5-7 days or nearly every day for 2 weeks' ;
+NOTE: Format F1C is already on the library LIBRARY.FORMATS.
+NOTE: Format F1C has been written to LIBRARY.FORMATS.
+33      value F1D
+34         0 = 'Not at all or less than 1 day'
+35         1 = '1-2 days'
+36         2 = '3-4 days'
+37         3 = '5-7 days or nearly every day for 2 weeks' ;
+NOTE: Format F1D is already on the library LIBRARY.FORMATS.
+NOTE: Format F1D has been written to LIBRARY.FORMATS.
+38      value F1E
+39         0 = 'Not at all or less than 1 day'
+40         1 = '1-2 days'
+41         2 = '3-4 days'
+42         3 = '5-7 days or nearly every day for 2 weeks' ;
+NOTE: Format F1E is already on the library LIBRARY.FORMATS.
+NOTE: Format F1E has been written to LIBRARY.FORMATS.
+43      value F1F
+44         0 = 'Not at all or less than 1 day'
+45         1 = '1-2 days'
+46         2 = '3-4 days'
+47         3 = '5-7 days or nearly every day for 2 weeks' ;
+NOTE: Format F1F is already on the library LIBRARY.FORMATS.
+NOTE: Format F1F has been written to LIBRARY.FORMATS.
+48      value F1G
+49         0 = 'Not at all or less than 1 day'
+50         1 = '1-2 days'
+51         2 = '3-4 days'
+52         3 = '5-7 days or nearly every day for 2 weeks' ;
+NOTE: Format F1G is already on the library LIBRARY.FORMATS.
+NOTE: Format F1G has been written to LIBRARY.FORMATS.
+53      value F1H
+54         0 = 'Not at all or less than 1 day'
+55         1 = '1-2 days'
+56         2 = '3-4 days'
+57         3 = '5-7 days or nearly every day for 2 weeks' ;
+NOTE: Format F1H is already on the library LIBRARY.FORMATS.
+NOTE: Format F1H has been written to LIBRARY.FORMATS.
+58      value F1I
+59         0 = 'Not at all or less than 1 day'
+60         1 = '1-2 days'
+61         2 = '3-4 days'
+62         3 = '5-7 days or nearly every day for 2 weeks' ;
+NOTE: Format F1I is already on the library LIBRARY.FORMATS.
+NOTE: Format F1I has been written to LIBRARY.FORMATS.
+63      value F1J
+64         0 = 'Not at all or less than 1 day'
+65         1 = '1-2 days'
+66         2 = '3-4 days'
+67         3 = '5-7 days or nearly every day for 2 weeks' ;
+NOTE: Format F1J is already on the library LIBRARY.FORMATS.
+NOTE: Format F1J has been written to LIBRARY.FORMATS.
+68      value F1K
+69         0 = 'Not at all or less than 1 day'
+70         1 = '1-2 days'
+71         2 = '3-4 days'
+72         3 = '5-7 days or nearly every day for 2 weeks' ;
+NOTE: Format F1K is already on the library LIBRARY.FORMATS.
+NOTE: Format F1K has been written to LIBRARY.FORMATS.
+73      value F1L
+74         0 = 'Not at all or less than 1 day'
+75         1 = '1-2 days'
+76         2 = '3-4 days'
+77         3 = '5-7 days or nearly every day for 2 weeks' ;
+NOTE: Format F1L is already on the library LIBRARY.FORMATS.
+NOTE: Format F1L has been written to LIBRARY.FORMATS.
+78      value F1M
+79         0 = 'Not at all or less than 1 day'
+80         1 = '1-2 days'
+81         2 = '3-4 days'
+82         3 = '5-7 days or nearly every day for 2 weeks' ;
+NOTE: Format F1M is already on the library LIBRARY.FORMATS.
+NOTE: Format F1M has been written to LIBRARY.FORMATS.
+83      value F1N
+84         0 = 'Not at all or less than 1 day'
+85         1 = '1-2 days'
+86         2 = '3-4 days'
+87         3 = '5-7 days or nearly every day for 2 weeks' ;
+NOTE: Format F1N is already on the library LIBRARY.FORMATS.
+NOTE: Format F1N has been written to LIBRARY.FORMATS.
+88      value F1O
+89         0 = 'Not at all or less than 1 day'
+90         1 = '1-2 days'
+91         2 = '3-4 days'
+92         3 = '5-7 days or nearly every day for 2 weeks' ;
+NOTE: Format F1O is already on the library LIBRARY.FORMATS.
+NOTE: Format F1O has been written to LIBRARY.FORMATS.
+93      value F1P
+94         0 = 'Not at all or less than 1 day'
+95         1 = '1-2 days'
+96         2 = '3-4 days'
+97         3 = '5-7 days or nearly every day for 2 weeks' ;
+NOTE: Format F1P is already on the library LIBRARY.FORMATS.
+NOTE: Format F1P has been written to LIBRARY.FORMATS.
+98      value F1Q
+99         0 = 'Not at all or less than 1 day'
+100        1 = '1-2 days'
+101        2 = '3-4 days'
+102        3 = '5-7 days or nearly every day for 2 weeks' ;
+NOTE: Format F1Q is already on the library LIBRARY.FORMATS.
+NOTE: Format F1Q has been written to LIBRARY.FORMATS.
+103     value F1R
+104        0 = 'Not at all or less than 1 day'
+105        1 = '1-2 days'
+106        2 = '3-4 days'
+107        3 = '5-7 days or nearly every day for 2 weeks' ;
+NOTE: Format F1R is already on the library LIBRARY.FORMATS.
+NOTE: Format F1R has been written to LIBRARY.FORMATS.
+108     value F1S
+109        0 = 'Not at all or less than 1 day'
+110        1 = '1-2 days'
+111        2 = '3-4 days'
+112        3 = '5-7 days or nearly every day for 2 weeks' ;
+NOTE: Format F1S is already on the library LIBRARY.FORMATS.
+NOTE: Format F1S has been written to LIBRARY.FORMATS.
+113     value F1T
+114        0 = 'Not at all or less than 1 day'
+115        1 = '1-2 days'
+116        2 = '3-4 days'
+117        3 = '5-7 days or nearly every day for 2 weeks' ;
+NOTE: Format F1T is already on the library LIBRARY.FORMATS.
+NOTE: Format F1T has been written to LIBRARY.FORMATS.
+118     value SATREAT
+119        0 = 'no'
+120        1 = 'yes' ;
+NOTE: Format SATREAT is already on the library LIBRARY.FORMATS.
+NOTE: Format SATREAT has been written to LIBRARY.FORMATS.
+121     value DRINKSTATUS
+122        0 = 'no'
+123        1 = 'yes' ;
+NOTE: Format DRINKSTATUS is already on the library LIBRARY.FORMATS.
+NOTE: Format DRINKSTATUS has been written to LIBRARY.FORMATS.
+124     value ANYSUBSTATUS
+125        0 = 'no'
+126        1 = 'yes' ;
+NOTE: Format ANYSUBSTATUS is already on the library LIBRARY.FORMATS.
+NOTE: Format ANYSUBSTATUS has been written to LIBRARY.FORMATS.
+127     value LINKSTATUS
+128        0 = 'no'
+129        1 = 'yes' ;
+NOTE: Format LINKSTATUS is already on the library LIBRARY.FORMATS.
+NOTE: Format LINKSTATUS has been written to LIBRARY.FORMATS.
+130
+
+NOTE: PROCEDURE FORMAT used (Total process time):
+      real time           0.13 seconds
+      cpu time            0.12 seconds
+
+
+131  proc datasets library = library;
+NOTE: Writing HTML Body file: sashtml.htm
+132  modify helpmkh / correctencoding="WLATIN1";
+133     format     treat TREAT.;
+134     format    female FEMALE.;
+135     format  homeless HOMELESS.;
+136     format       g1b G1B.;
+137     format       f1a F1A.;
+138     format       f1b F1B.;
+139     format       f1c F1C.;
+140     format       f1d F1D.;
+141     format       f1e F1E.;
+142     format       f1f F1F.;
+143     format       f1g F1G.;
+144     format       f1h F1H.;
+145     format       f1i F1I.;
+146     format       f1j F1J.;
+147     format       f1k F1K.;
+148     format       f1l F1L.;
+149     format       f1m F1M.;
+150     format       f1n F1N.;
+151     format       f1o F1O.;
+152     format       f1p F1P.;
+153     format       f1q F1Q.;
+154     format       f1r F1R.;
+155     format       f1s F1S.;
+156     format       f1t F1T.;
+157     format   satreat SATREAT.;
+158     format drinkstatus DRINKSTATUS.;
+159     format anysubstatus ANYSUBSTATUS.;
+160     format linkstatus LINKSTATUS.;
+161  quit;
+
+NOTE: MODIFY was successful for LIBRARY.HELPMKH.DATA.
+NOTE: PROCEDURE DATASETS used (Total process time):
+      real time           0.44 seconds
+      cpu time            0.37 seconds
+
+
+162  * ============================================
+163    N736: LESSON 17 - Analysis of Covariance (ANCOVA)
+164
+165    by Melinda Higgins, PhD
+166    dated 24 October 2017
+167
+168    For this exercise we'll be working with the
+169    HELP dataset - using these variables
+170    sexrisk, mcs, pss_fr and female
+171    ============================================;
+172
+173  * ============================================
+174    We will be looking at
+175    DV = sexrisk
+176    IV = mcs
+177    CV = pss_fr or female
+178    ============================================;
+179
+180  data work.helpmkh;
+181    set library.helpmkh;
+182    run;
+
+NOTE: There were 453 observations read from the data set LIBRARY.HELPMKH.
+NOTE: The data set WORK.HELPMKH has 453 observations and 88 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.06 seconds
+      cpu time            0.03 seconds
+
+
+183
+184  * ============================================
+185    we will also want to compute the interaction
+186    effects - so let's mean center mcs and pss_fr
+187    and compute the interaction terms
+188
+189    we'll use PROC MEANS to get the means
+190    and standard deviations
+191    ============================================;
+192
+193  proc means data=helpmkh mean std;
+194    var mcs pss_fr;
+195    run;
+
+NOTE: There were 453 observations read from the data set WORK.HELPMKH.
+NOTE: PROCEDURE MEANS used (Total process time):
+      real time           0.04 seconds
+      cpu time            0.06 seconds
+
+
+196
+197  * ============================================
+198    we're also going to flip the coding for female
+199    and compute male to compare the contrasts
+200    and coefficients in the models
+201    ============================================;
+202
+203  data help2;
+204    set helpmkh;
+205    male = female=0;
+206    mcsC = mcs - 31.677;
+207    pss_frC = pss_fr-6.7;
+208    mcsC_x_pss_frC = mcsC * pss_frC;
+209    mcsC_x_female = mcsC * female;
+210    mcsC_x_male = mcsC * male;
+211    run;
+
+NOTE: There were 453 observations read from the data set WORK.HELPMKH.
+NOTE: The data set WORK.HELP2 has 453 observations and 94 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.05 seconds
+      cpu time            0.04 seconds
+
+
+212
+213  proc freq data=help2;
+214    table female male;
+215    run;
+
+NOTE: There were 453 observations read from the data set WORK.HELP2.
+NOTE: PROCEDURE FREQ used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.01 seconds
+
+
+216
+217  * ============================================
+218    run ANCOVA using PROC REG for the association
+219    between sexrisk and mcs adjusting for pss_fr
+220    and testing for the interaction between
+221    mcs and pss_fr
+222    ============================================;
+223
+224  proc reg data=help2;
+225    model sexrisk = mcsC pss_frC mcsC_x_pss_frC;
+226    run;
+
+227
+228  * ============================================
+229    Use PROC GLM to compute the interaction
+230    term on the fly automatically - the use
+231    the store option to save the model fit
+232    followed by PROC PLM to make the effectplot
+233    we show the plot at -2, -1 0, 1 and 2
+234    standard deviations below and above the mean
+235    for the centered pss_frC
+236    ============================================;
+237
+
+NOTE: PROCEDURE REG used (Total process time):
+      real time           6.67 seconds
+      cpu time            3.93 seconds
+
+
+238  proc glm data=help2;
+239    model sexrisk = mcsC|pss_frC / solution;
+240    store glmmodel;
+241  run;
+
+242
+
+NOTE: The GLM procedure generated the model item store WORK.GLMMODEL.
+NOTE: PROCEDURE GLM used (Total process time):
+      real time           1.08 seconds
+      cpu time            0.40 seconds
+
+
+243  proc plm source=glmmodel;
+244    effectplot fit (x=mcsC) / at(pss_frC = -7.99 -3.995 0 3.995 7.99);
+245  run;
+
+NOTE: PROCEDURE PLM used (Total process time):
+      real time           1.29 seconds
+      cpu time            0.06 seconds
+
+
+246
+247  * ============================================
+248    notice that the lines are all mostly parallel
+249    which supports the non-significant interaction
+250    term in the model
+251    ============================================;
+252
+253  * ============================================
+254    let's do this one more time using PROC ANOVA
+255    ============================================;
+256
+257  proc anova data=help2;
+258    model sexrisk = mcsC*pss_frC;
+259    run;
+
+ERROR: No continuous effects allowed in PROC ANOVA.
+NOTE: The SAS System stopped processing this step because of errors.
+NOTE: PROCEDURE ANOVA used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+
+260
+261  * ============================================
+262    WHAT? yep - you get an error
+263    in SAS you cannot have only
+264    continuous terms when running proc anova
+265    ============================================;
+266
+267  * ============================================
+268    let's next run ANCOVA looking
+269    at gender as our covariate
+270    ============================================;
+271
+
+
+272  proc reg data=help2;
+273    model sexrisk = mcsC female mcsC_x_female;
+274    run;
+
+275
+276  * ============================================
+277    try also using the male coding
+278    ============================================;
+279
+
+NOTE: PROCEDURE REG used (Total process time):
+      real time           6.24 seconds
+      cpu time            4.42 seconds
+
+
+280  proc reg data=help2;
+281    model sexrisk = mcsC male mcsC_x_male;
+282    run;
+
+283
+284  * ============================================
+285    also do via PROC GLM with PROC PLM
+286    to get the effectplots
+287    ============================================;
+288
+
+NOTE: PROCEDURE REG used (Total process time):
+      real time           6.12 seconds
+      cpu time            4.51 seconds
+
+
+289  proc glm data=help2;
+290    model sexrisk = mcsC|female / solution;
+291    store glmmodel2;
+292  run;
+
+293
+
+NOTE: The GLM procedure generated the model item store WORK.GLMMODEL2.
+NOTE: PROCEDURE GLM used (Total process time):
+      real time           0.80 seconds
+      cpu time            0.36 seconds
+
+
+294  proc plm source=glmmodel2;
+295    effectplot fit (x=mcsC) / at(female = 0 1);
+296  run;
+
+NOTE: PROCEDURE PLM used (Total process time):
+      real time           0.40 seconds
+      cpu time            0.04 seconds
+
+
+297
+298  * ============================================
+299    and via PROC ANOVA
+300    - still get an error - no continuous effects allowed
+301    ============================================;
+302
+303  proc anova data=help2;
+304    class female;
+305    model sexrisk = mcsC|female;
+306    means female / hovtest welch;
+307    run;
+
+ERROR: No continuous effects allowed in PROC ANOVA.
+NOTE: The SAS System stopped processing this step because of errors.
+NOTE: PROCEDURE ANOVA used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+
+
