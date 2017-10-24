@@ -8,3 +8,6 @@ See HTML output for:
     
 * SAS output for Lesson 17
     - [https://melindahiggins2000.github.io/N736Fall2017_lesson17/lesson17_SAS_output.html](https://melindahiggins2000.github.io/N736Fall2017_lesson17/lesson17_SAS_output.html)
+    
+* R code and output (using `rmarkdown`) for Lesson 17
+    - [https://melindahiggins2000.github.io/N736Fall2017_lesson17/lesson17_R_rmarkdown.html](https://melindahiggins2000.github.io/N736Fall2017_lesson17/lesson17_R_rmarkdown.html)
