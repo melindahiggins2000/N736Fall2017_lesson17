@@ -1,0 +1,26 @@
+gender diffs
+
+mcs-pcs ** yes <-----
+	stronger for females
+
+indtot-pcs ** almost
+
+mcs-pssfr  ** ~
+
+age-pssfr ~
+
+pcs-pssfr ~
+
+indtot-age ~
+
+
+
+homeless diffs
+age - mcs ** <-----------
+	positive for homeless
+	flat to negative for not homeless
+cesd - pss_fr ~
+
+
+
+ERROR: dependencies 'dplyr', 'lme4', 'purrr', 'rlang', 'scales', 'tidyr' are not available for package 'sjPlot'
