@@ -74,16 +74,18 @@ coef(aov2)
 
 # get type III SS
 library(car)
-car::Anova(aov2)
+car::Anova(aov2, type=3)
 
 # add interaction effects
 # test if gender moderates the 
 # association between pcs and mcs
 lm4 <- lm(mcs ~ pcs + female + pcs_x_female, data=help2)
+summary(lm4)
 
 # can also compute interaction on fly
 # using the : notation in R
 lm5 <- lm(mcs ~ pcs + female + pcs:female, data=help2)
+summary(lm5)
 
 # to get p-values of r2 change
 # works for "nested" models
@@ -118,8 +120,8 @@ plot(effect("pcs:female.f", m1,
      multiline=TRUE, ylab="mcs", rug=FALSE)
 
 # install sjPlot package
-library(devtools)
-devtools::install_github("strengejacke/sjPlot")
+# library(devtools)
+# devtools::install_github("strengejacke/sjPlot")
 
 # another option to sjPlot package
 library(sjPlot)
